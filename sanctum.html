@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanctum — Executive Summary 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest: #1B4332;
+    --green:  #2D6A4F;
+    --mid:    #52B788;
+    --light:  #D8F3DC;
+    --cream:  #FAFAF8;
+    --ink:    #0F1A10;
+    --muted:  #6B7280;
+    --border: #E5E7EB;
+    --gold:   #B8861F;
+  }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none !important; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #E8E8E4;
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .print-hint {
+    font-size: 0.78rem; color: #888; margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .print-btn {
+    padding: 0.4rem 1rem; border-radius: 6px;
+    background: var(--forest); color: white;
+    border: none; cursor: pointer; font-size: 0.78rem;
+    font-family: 'Inter', sans-serif; font-weight: 600;
+  }
+
+  /* PAGE */
+  .page {
+    width: 794px; /* A4 width at 96dpi */
+    background: var(--cream);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* HEADER BAND */
+  .header {
+    background: var(--forest);
+    padding: 2.2rem 2.5rem 1.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute; right: -60px; top: -60px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: rgba(82,183,136,0.15);
+    pointer-events: none;
+  }
+  .header-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .logo-block .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: white; letter-spacing: 0.02em;
+  }
+  .logo-block .tagline {
+    font-size: 0.8rem; color: rgba(82,183,136,0.85);
+    margin-top: 0.15rem; font-weight: 500; letter-spacing: 0.04em;
+  }
+  .conf-badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.4rem 0.9rem; border-radius: 100px;
+    font-size: 0.68rem; color: rgba(255,255,255,0.7);
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .header-headline {
+    margin-top: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; color: white; line-height: 1.35;
+    max-width: 480px;
+  }
+  .header-headline em { color: var(--mid); font-style: italic; }
+  .header-sub {
+    margin-top: 0.6rem;
+    font-size: 0.82rem; color: rgba(255,255,255,0.6);
+    line-height: 1.6; max-width: 500px;
+  }
+
+  /* STATS STRIP */
+  .stats-strip {
+    background: var(--green);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-cell {
+    padding: 0.9rem 1.25rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem; color: white; line-height: 1;
+  }
+  .stat-key {
+    font-size: 0.65rem; color: rgba(255,255,255,0.55);
+    margin-top: 0.2rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* BODY */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 0;
+  }
+  .col-left { padding: 1.75rem 1.5rem 1.75rem 2.5rem; border-right: 1px solid var(--border); }
+  .col-right { padding: 1.75rem 2.5rem 1.75rem 1.5rem; }
+
+  .section-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mid);
+    margin-bottom: 0.7rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--light); }
+
+  h3.block-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--forest);
+    margin-bottom: 0.6rem;
+  }
+
+  p.body-text {
+    font-size: 0.82rem; line-height: 1.72; color: #374151;
+  }
+
+  .block { margin-bottom: 1.5rem; }
+
+  /* BULLET LIST */
+  .bullet-list { list-style: none; margin: 0; }
+  .bullet-list li {
+    font-size: 0.8rem; line-height: 1.6; color: #374151;
+    padding: 0.28rem 0;
+    display: flex; gap: 0.6rem; align-items: flex-start;
+    border-bottom: 1px solid rgba(82,183,136,0.07);
+  }
+  .bullet-list li:last-child { border-bottom: none; }
+  .bullet-list li::before {
+    content: '▸'; color: var(--mid); font-size: 0.65rem;
+    flex-shrink: 0; margin-top: 0.18rem;
+  }
+
+  /* METRIC ROWS */
+  .metric-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+  }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-key { color: var(--muted); }
+  .metric-val { font-weight: 700; color: var(--forest); }
+  .metric-val.green { color: var(--green); }
+
+  /* SAFE BOX */
+  .safe-box {
+    background: var(--forest);
+    border-radius: 10px; padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .safe-box .ask-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; color: white; line-height: 1;
+  }
+  .safe-box .ask-sub {
+    font-size: 0.75rem; color: rgba(82,183,136,0.85);
+    margin-top: 0.2rem; font-weight: 600;
+  }
+  .safe-terms {
+    margin-top: 0.9rem; display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 1rem;
+  }
+  .safe-term-row { font-size: 0.72rem; color: rgba(255,255,255,0.6); }
+  .safe-term-row strong { color: white; }
+
+  /* MILESTONES */
+  .milestone {
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(82,183,136,0.08);
+  }
+  .milestone:last-child { border-bottom: none; }
+  .ms-dot {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; font-weight: 700; color: var(--green);
+    flex-shrink: 0; margin-top: 0.1rem;
+  }
+  .ms-title { font-size: 0.8rem; font-weight: 600; color: var(--forest); }
+  .ms-desc  { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+
+  /* TAGS */
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
+  .tag {
+    padding: 0.22rem 0.6rem;
+    background: var(--light); color: var(--green);
+    font-size: 0.68rem; font-weight: 700;
+    border-radius: 100px; letter-spacing: 0.04em;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink);
+    padding: 1rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-left { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+  .footer-left strong { color: var(--mid); }
+  .footer-right { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+
+  /* VERTICAL DIVIDER */
+  .vdiv { width: 1px; background: var(--light); }
+
+  /* PROBLEM CALLOUT */
+  .callout {
+    background: var(--light);
+    border-left: 3px solid var(--mid);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem; color: var(--forest); line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .callout strong { color: var(--green); }
+</style>
+</head>
+<body>
+
+<div class="print-hint no-print">
+  For best results, print as A4 / Letter · Landscape or Portrait
+  <button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-block">
+        <div class="logo">Sanctum</div>
+        <div class="tagline">sanctumental.com</div>
+      </div>
+      <div class="conf-badge">Confidential · May 2026</div>
+    </div>
+    <div class="header-headline">
+      The <em>AI companion</em> for mental wellness — built for Africa, ready for the world.
+    </div>
+    <div class="header-sub">
+      Sanctum helps people understand, process, and grow through their emotions — through conversational AI, private journaling, smart insights, and personalised wellness activities. Live product. Organic users. Zero marketing spend.
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <div class="stat-val">118</div>
+      <div class="stat-key">Organic Users</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">6 mo</div>
+      <div class="stat-key">Live Product</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">7 min+</div>
+      <div class="stat-key">Avg Session</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">$0</div>
+      <div class="stat-key">Mktg Spend</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-grid">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <!-- Problem -->
+      <div class="block">
+        <div class="section-label">The Problem</div>
+        <div class="callout">
+          <strong>1 in 4 Africans</strong> will experience a mental health condition. Yet Africa has just <strong>1.4 psychiatrists per 100,000 people</strong> — and 90% of those who need care receive none. Existing apps are built for Western markets: expensive, culturally irrelevant, and inaccessible.
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="block">
+        <div class="section-label">The Solution</div>
+        <h3 class="block-title">An always-available AI wellness companion.</h3>
+        <ul class="bullet-list">
+          <li>Conversational AI — empathetic, private, 24/7 emotional support</li>
+          <li>Private Journal — encrypted, safe space for thoughts and feelings</li>
+          <li>Smart Insights — AI-powered emotional pattern recognition</li>
+          <li>Wellness Activities — breathing, reflection, personalised exercises</li>
+          <li>Mobile App in active development (iOS + Android)</li>
+        </ul>
+      </div>
+
+      <!-- Business Model -->
+      <div class="block">
+        <div class="section-label">Business Model</div>
+        <h3 class="block-title">Freemium → Subscription → B2B</h3>
+        <ul class="bullet-list">
+          <li>Free tier drives organic user acquisition and retention</li>
+          <li>Subscription: $4.99/mo or $39.99/yr — unlocks AI companion + Insights</li>
+          <li>B2B (Year 2): corporate wellness, university licenses, NGO contracts</li>
+          <li>Target gross margin: ~70% (pure digital SaaS)</li>
+          <li>Break-even target: Month 18 with 400+ paying subscribers</li>
+        </ul>
+      </div>
+
+      <!-- Market -->
+      <div class="block">
+        <div class="section-label">Market Opportunity</div>
+        <div class="metric-row"><span class="metric-key">Global mental health app market (2024)</span><span class="metric-val">$6.2B</span></div>
+        <div class="metric-row"><span class="metric-key">Projected market size (2030)</span><span class="metric-val">$17.5B</span></div>
+        <div class="metric-row"><span class="metric-key">CAGR</span><span class="metric-val green">16.5%</span></div>
+        <div class="metric-row"><span class="metric-key">Africa population (60% under 25)</span><span class="metric-val">1.4 Billion</span></div>
+        <div class="metric-row"><span class="metric-key">Africa-first dominant player</span><span class="metric-val green">None — wide open</span></div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <!-- The Ask -->
+      <div class="block">
+        <div class="section-label">The Ask</div>
+        <div class="safe-box">
+          <div class="ask-line">$120,000</div>
+          <div class="ask-sub">Pre-Seed SAFE Note · YC Post-Money Standard</div>
+          <div class="safe-terms">
+            <div class="safe-term-row">Cap: <strong>$1,200,000</strong></div>
+            <div class="safe-term-row">Discount: <strong>20%</strong></div>
+            <div class="safe-term-row">Implied equity: <strong>10%</strong></div>
+            <div class="safe-term-row">Founder retains: <strong>90%</strong></div>
+            <div class="safe-term-row">Pro-Rata: <strong>Yes</strong></div>
+            <div class="safe-term-row">Board Seat: <strong>No</strong></div>
+          </div>
+        </div>
+        <p class="body-text" style="font-size:0.77rem;">$120K = 12–14 months runway. Funds: team (52%), next-round reserve (21%), AI API (5%), marketing (5%), legal & ops (17%).</p>
+      </div>
+
+      <!-- Traction & Proof -->
+      <div class="block">
+        <div class="section-label">Traction & Proof Points</div>
+        <div class="metric-row"><span class="metric-key">Registered users</span><span class="metric-val green">118 (0 ad spend)</span></div>
+        <div class="metric-row"><span class="metric-key">Product status</span><span class="metric-val green">Live — 6 months</span></div>
+        <div class="metric-row"><span class="metric-key">Average session time</span><span class="metric-val green">7+ minutes</span></div>
+        <div class="metric-row"><span class="metric-key">IP ownership</span><span class="metric-val">100% founder-owned</span></div>
+        <div class="metric-row"><span class="metric-key">Mobile app</span><span class="metric-val">In development</span></div>
+        <div class="metric-row"><span class="metric-key">Security</span><span class="metric-val">AES-256 · GDPR · DPA 2019</span></div>
+      </div>
+
+      <!-- 12-Month Milestones -->
+      <div class="block">
+        <div class="section-label">12-Month Milestones</div>
+        <div class="milestone">
+          <div class="ms-dot">1–2</div>
+          <div><div class="ms-title">Incorporate (Kenya + Delaware)</div><div class="ms-desc">BRS registration, IP assignment, SAFE docs ready</div></div>
+        </div>
+        <div class="milestone">
+          <div class="ms-dot">3–5</div>
+          <div><div class="ms-title">First Raise + Core Team</div><div class="ms-desc">Close Kenya angels, hire Growth Lead + Designer</div></div>
+        </div>
+        <div class="milestone">
+          <div class="ms-dot">5–7</div>
+          <div><div class="ms-title">Mobile App Beta Launch</div><div class="ms-desc">iOS + Android public beta, 1,000 users target</div></div>
+        </div>
+        <div class="milestone">
+          <div class="ms-dot">8–10</div>
+          <div><div class="ms-title">First Paying Subscribers</div><div class="ms-desc">Revenue activation, $500+ MRR, corporate outreach</div></div>
+        </div>
+        <div class="milestone">
+          <div class="ms-dot">12</div>
+          <div><div class="ms-title">Seed Round Ready</div><div class="ms-desc">2,000 MAU · $5K+ MRR · Seed pitch deck live</div></div>
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div class="block">
+        <div class="section-label">Founder</div>
+        <p class="body-text"><strong style="color:var(--forest);">Alpha Lee Njagi Munene</strong> — built Sanctum entirely alone. Web app, AI integration, database, security, subscriptions, and mobile app (in progress). Every line of code. Six months shipped and live.</p>
+        <div class="tag-row">
+          <span class="tag">Full-Stack</span>
+          <span class="tag">AI/ML</span>
+          <span class="tag">Product</span>
+          <span class="tag">Mobile Dev</span>
+          <span class="tag">Solo Builder</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <strong>Sanctum</strong> · Alpha Lee Njagi Munene · sanctumental.com
+    </div>
+    <div class="footer-right">Confidential — For qualified investors only · May 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>
