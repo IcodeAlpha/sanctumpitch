@@ -249,6 +249,124 @@
     margin-bottom: 1.25rem;
   }
   .callout strong { color: var(--green); }
+
+  /* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+  body {
+    padding: 1rem;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header {
+    padding: 1.5rem;
+  }
+
+  .header-top {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header-headline {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+
+  .header-sub {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-cell {
+    padding: 1rem 0.5rem;
+  }
+
+  .body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .col-left,
+  .col-right {
+    padding: 1.5rem;
+    border-right: none;
+  }
+
+  .safe-terms {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  .metric-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .milestone {
+    align-items: flex-start;
+  }
+
+  .pitch-btn,
+  a[href="sanctumpitch.html"] {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+/* Extra small phones */
+
+@media (max-width: 500px) {
+
+  .header-headline {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .logo-block .logo {
+    font-size: 1.6rem;
+  }
+
+  .stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-val {
+    font-size: 1.3rem;
+  }
+
+  .section-label {
+    font-size: 0.55rem;
+  }
+
+  h3.block-title {
+    font-size: 0.95rem;
+  }
+
+  p.body-text,
+  .bullet-list li,
+  .metric-row {
+    font-size: 0.78rem;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -349,7 +467,7 @@
         <h3 class="block-title">Freemium → Subscription → B2B</h3>
         <ul class="bullet-list">
           <li>Free tier drives organic user acquisition and retention</li>
-          <li>Subscription: $4.99/mo or $39.99/yr — unlocks AI companion + Insights</li>
+          <li>Subscription: $1.99/mo or $25.99/yr — unlocks AI companion + Insights</li>
           <li>B2B (Year 2): corporate wellness, university licenses, NGO contracts</li>
           <li>Target gross margin: ~70% (pure digital SaaS)</li>
           <li>Break-even target: Month 18 with 400+ paying subscribers</li>
