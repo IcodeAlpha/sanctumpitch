@@ -30,7 +30,6 @@
     overflow-x: hidden;
   }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -49,17 +48,13 @@
   .nav-dot.active, .nav-dot:hover { background: var(--mid); transform: scale(1.4); }
   .slide-counter { font-size: 0.75rem; color: rgba(82,183,136,0.6); font-weight: 500; }
 
-  /* SLIDE SYSTEM */
   .deck { position: relative; }
 
   .slide {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     padding: 5rem 2rem 3rem;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
   }
 
   .slide-inner {
@@ -69,14 +64,12 @@
   }
   .slide-inner.visible { opacity: 1; transform: translateY(0); }
 
-  /* BACKGROUNDS */
   .bg-dark    { background: #0C1A12; }
   .bg-forest  { background: var(--forest); }
   .bg-cream   { background: var(--cream); }
   .bg-warm    { background: var(--warm); }
   .bg-mid     { background: #1A3A2A; }
 
-  /* DECORATIVE */
   .orb {
     position: absolute; border-radius: 50%;
     filter: blur(80px); pointer-events: none; opacity: 0.25;
@@ -90,10 +83,7 @@
     margin-bottom: 1.2rem;
     display: flex; align-items: center; gap: 0.75rem;
   }
-  .slide-label::before {
-    content: ''; display: block;
-    width: 32px; height: 1.5px; background: var(--mid);
-  }
+  .slide-label::before { content: ''; display: block; width: 32px; height: 1.5px; background: var(--mid); }
 
   h1.hero { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 1.05; }
   h2.section-title { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; }
@@ -110,63 +100,39 @@
   p.body-dark { font-size: 1rem; line-height: 1.75; color: #374151; }
 
   .tag {
-    display: inline-block;
-    padding: 0.3rem 0.9rem;
-    border-radius: 100px;
+    display: inline-block; padding: 0.3rem 0.9rem; border-radius: 100px;
     font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em;
-    border: 1px solid rgba(82,183,136,0.4);
-    color: var(--mid);
-    margin-bottom: 1.5rem;
-    background: rgba(82,183,136,0.08);
+    border: 1px solid rgba(82,183,136,0.4); color: var(--mid);
+    margin-bottom: 1.5rem; background: rgba(82,183,136,0.08);
   }
 
-  /* GRID */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 
-  /* CARDS */
   .card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(82,183,136,0.15);
-    border-radius: 16px;
-    padding: 1.75rem;
+    border-radius: 16px; padding: 1.75rem;
     backdrop-filter: blur(8px);
   }
   .card-light {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.75rem;
+    background: white; border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.75rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
-  .card-green {
-    background: var(--green);
-    border-radius: 16px;
-    padding: 1.75rem;
-  }
+  .card-green { background: var(--green); border-radius: 16px; padding: 1.75rem; }
 
   .stat-big { font-family: 'DM Serif Display', serif; font-size: 2.8rem; line-height: 1; color: var(--mid); }
   .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 0.4rem; font-weight: 500; }
   .stat-label-dark { font-size: 0.85rem; color: var(--muted); margin-top: 0.4rem; font-weight: 500; }
 
-  /* PROBLEM SLIDE */
-  .problem-stat {
-    font-family: 'DM Serif Display', serif;
-    font-size: 4rem; color: var(--mid);
-    line-height: 1;
-  }
-  .problem-line {
-    border-left: 3px solid var(--mid);
-    padding-left: 1.25rem;
-    margin: 1.25rem 0;
-  }
+  .problem-stat { font-family: 'DM Serif Display', serif; font-size: 4rem; color: var(--mid); line-height: 1; }
+  .problem-line { border-left: 3px solid var(--mid); padding-left: 1.25rem; margin: 1.25rem 0; }
 
-  /* FEATURE LIST */
   .feature-item {
     display: flex; gap: 1rem; align-items: flex-start;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(82,183,136,0.1);
+    padding: 1rem 0; border-bottom: 1px solid rgba(82,183,136,0.1);
   }
   .feature-item:last-child { border-bottom: none; }
   .feature-icon {
@@ -176,31 +142,13 @@
     font-size: 1.1rem; flex-shrink: 0;
   }
 
-  /* TRACTION BAR */
-  .traction-bar {
-    background: rgba(82,183,136,0.1);
-    border-radius: 100px; height: 8px; overflow: hidden; margin-top: 0.5rem;
-  }
-  .traction-fill {
-    height: 100%; border-radius: 100px;
-    background: linear-gradient(90deg, var(--green), var(--mid));
-    transition: width 1s ease;
-  }
+  .traction-bar { background: rgba(82,183,136,0.1); border-radius: 100px; height: 8px; overflow: hidden; margin-top: 0.5rem; }
+  .traction-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--green), var(--mid)); transition: width 1s ease; }
 
-  /* MARKET */
-  .market-circle {
-    border-radius: 50%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center;
-  }
-
-  /* TEAM */
   .founder-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(82,183,136,0.2);
-    border-radius: 20px; padding: 2rem;
-    text-align: center;
+    border-radius: 20px; padding: 2rem; text-align: center;
   }
   .founder-avatar {
     width: 80px; height: 80px; border-radius: 50%;
@@ -209,97 +157,67 @@
     font-family: 'DM Serif Display', serif; font-size: 2rem;
     color: white; margin: 0 auto 1rem;
   }
-
-  /* ASK */
-  .ask-number {
-    font-family: 'DM Serif Display', serif;
-    font-size: 5rem; color: white; line-height: 1;
+  .hire-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700; color: var(--green);
+    flex-shrink: 0;
   }
+
+  .ask-number { font-family: 'DM Serif Display', serif; font-size: 5rem; color: white; line-height: 1; }
   .ask-pill {
     display: inline-block; padding: 0.5rem 1.25rem;
-    background: rgba(82,183,136,0.15);
-    border: 1px solid rgba(82,183,136,0.3);
+    background: rgba(82,183,136,0.15); border: 1px solid rgba(82,183,136,0.3);
     border-radius: 100px; font-size: 0.9rem; font-weight: 600;
     color: var(--mid); margin: 0.4rem 0.2rem;
   }
 
-  /* DIVIDER */
   .h-line { height: 1px; background: rgba(82,183,136,0.2); margin: 1.5rem 0; }
   .h-line-dark { height: 1px; background: var(--border); margin: 1.5rem 0; }
 
-  /* PROGRESS BAR (slide) */
   .progress-bar {
     position: fixed; bottom: 0; left: 0; height: 3px;
     background: linear-gradient(90deg, var(--green), var(--mid));
     transition: width 0.3s ease; z-index: 200;
   }
 
-  /* ARROWS */
-  .nav-arrows {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
-    display: flex; gap: 0.6rem;
-  }
+  .nav-arrows { position: fixed; bottom: 2rem; right: 2rem; z-index: 100; display: flex; gap: 0.6rem; }
   .arrow-btn {
     width: 44px; height: 44px; border-radius: 50%;
-    background: rgba(82,183,136,0.15);
-    border: 1px solid rgba(82,183,136,0.3);
+    background: rgba(82,183,136,0.15); border: 1px solid rgba(82,183,136,0.3);
     color: var(--mid); cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.1rem; transition: all 0.2s;
   }
   .arrow-btn:hover { background: var(--mid); color: white; }
 
-  /* RESPONSIVE */
-  @media (max-width: 700px) {
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-    h1.hero { font-size: 2.8rem; }
-    .problem-stat { font-size: 2.8rem; }
-    .ask-number { font-size: 3rem; }
-  }
-
-  /* ANIMATIONS */
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  .float { animation: float 4s ease-in-out infinite; }
-
-  @keyframes pulse-ring {
-    0% { box-shadow: 0 0 0 0 rgba(82,183,136,0.4); }
-    100% { box-shadow: 0 0 0 20px rgba(82,183,136,0); }
-  }
-
-  /* SLIDE NUMBERS */
-  .slide-num {
-    position: absolute; bottom: 2.5rem; left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.75rem; color: rgba(82,183,136,0.4);
-    letter-spacing: 0.1em;
-  }
-
-  /* QUOTE */
-  blockquote.mission {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-    line-height: 1.4;
-    color: white;
-    font-style: italic;
-    max-width: 700px;
-    border-left: 4px solid var(--mid);
-    padding-left: 1.5rem;
-  }
-
-  /* USE OF FUNDS DONUT PLACEHOLDER */
   .funds-row {
     display: flex; align-items: center; gap: 1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(82,183,136,0.08);
+    padding: 0.75rem 0; border-bottom: 1px solid rgba(82,183,136,0.08);
   }
   .funds-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
   .funds-bar-wrap { flex: 1; background: rgba(82,183,136,0.08); border-radius: 4px; height: 6px; }
   .funds-bar { height: 100%; border-radius: 4px; }
   .funds-pct { font-size: 0.85rem; font-weight: 600; color: var(--mid); min-width: 36px; text-align: right; }
 
+  .slide-num { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); font-size: 0.75rem; color: rgba(82,183,136,0.4); letter-spacing: 0.1em; }
+
+  blockquote.mission {
+    font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    line-height: 1.4; color: white; font-style: italic; max-width: 700px;
+    border-left: 4px solid var(--mid); padding-left: 1.5rem;
+  }
+
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .float { animation: float 4s ease-in-out infinite; }
+
+  @media (max-width: 700px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    h1.hero { font-size: 2.8rem; }
+    .problem-stat { font-size: 2.8rem; }
+    .ask-number { font-size: 3rem; }
+  }
 </style>
 </head>
 <body>
@@ -314,49 +232,31 @@
 
 <div class="deck" id="deck">
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 1 — COVER
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 1 — COVER -->
 <section class="slide bg-dark" id="slide-1">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="slide-inner">
     <div class="tag">Investor Presentation · May 2026 · Confidential</div>
-    <h1 class="hero text-light">
-      Your Mind<br><span class="text-green">Needs Peace.</span>
-    </h1>
+    <h1 class="hero text-light">Your Mind<br><span class="text-green">Needs Peace.</span></h1>
     <div style="margin-top:2rem; margin-bottom:2.5rem;">
       <p class="lead">Sanctum is an AI-powered mental wellness companion — helping people across Africa and beyond understand, process, and grow through their emotions.</p>
     </div>
     <div class="h-line"></div>
     <div class="grid-4" style="margin-top:1.75rem;">
-      <div>
-        <div class="stat-big">118</div>
-        <div class="stat-label">Organic Active Users</div>
-      </div>
-      <div>
-        <div class="stat-big">6mo</div>
-        <div class="stat-label">Live Product</div>
-      </div>
-      <div>
-        <div class="stat-big">7min+</div>
-        <div class="stat-label">Avg Session</div>
-      </div>
-      <div>
-        <div class="stat-big">$0</div>
-        <div class="stat-label">Marketing Spend</div>
-      </div>
+      <div><div class="stat-big">118</div><div class="stat-label">Organic Active Users</div></div>
+      <div><div class="stat-big">6mo</div><div class="stat-label">Live Product</div></div>
+      <div><div class="stat-big">7min+</div><div class="stat-label">Avg Session</div></div>
+      <div><div class="stat-big">$0</div><div class="stat-label">Marketing Spend</div></div>
     </div>
     <div style="margin-top:2.5rem;">
-      <p style="font-size:0.85rem; color:rgba(82,183,136,0.6);">Alpha Lee Njagi Munene · Founder & CTO · sanctumental.com</p>
+      <p style="font-size:0.85rem; color:rgba(82,183,136,0.6);">Alpha Lee Njagi Munene · Founder &amp; CTO · sanctumental.com</p>
     </div>
   </div>
   <div class="slide-num">01 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 2 — PROBLEM
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 2 — PROBLEM -->
 <section class="slide bg-forest" id="slide-2">
   <div class="slide-inner">
     <div class="slide-label">The Problem</div>
@@ -381,9 +281,7 @@
   <div class="slide-num">02 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 3 — SOLUTION
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 3 — SOLUTION -->
 <section class="slide bg-dark" id="slide-3">
   <div class="orb orb-1" style="opacity:0.15;"></div>
   <div class="slide-inner">
@@ -393,46 +291,18 @@
         <h2 class="section-title text-light">Meet <span class="text-green">Sanctum.</span></h2>
         <p class="lead" style="margin-top:1.25rem; font-size:1rem;">A private, affordable, always-available AI companion for your emotional wellbeing — built for Africa, ready for the world.</p>
         <div style="margin-top:2rem;">
-          <div class="feature-item">
-            <div class="feature-icon">💬</div>
-            <div>
-              <div class="sub-title" style="font-weight:600; color:white; font-size:0.95rem;">Conversational AI</div>
-              <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-top:0.2rem;">An empathetic AI that truly listens — any time, any day</div>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">📔</div>
-            <div>
-              <div style="font-weight:600; color:white; font-size:0.95rem;">Private Journal</div>
-              <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-top:0.2rem;">Your inner sanctuary — encrypted, personal, safe</div>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">✨</div>
-            <div>
-              <div style="font-weight:600; color:white; font-size:0.95rem;">Smart Insights</div>
-              <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-top:0.2rem;">AI-powered patterns in your emotional journey</div>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">🌿</div>
-            <div>
-              <div style="font-weight:600; color:white; font-size:0.95rem;">Wellness Activities</div>
-              <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-top:0.2rem;">Personalised exercises, breathing, and reflections</div>
-            </div>
-          </div>
+          <div class="feature-item"><div class="feature-icon">💬</div><div><div style="font-weight:600;color:white;font-size:0.95rem;">Conversational AI</div><div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;">An empathetic AI that truly listens — any time, any day</div></div></div>
+          <div class="feature-item"><div class="feature-icon">📔</div><div><div style="font-weight:600;color:white;font-size:0.95rem;">Private Journal</div><div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;">Your inner sanctuary — encrypted, personal, safe</div></div></div>
+          <div class="feature-item"><div class="feature-icon">✨</div><div><div style="font-weight:600;color:white;font-size:0.95rem;">Smart Insights</div><div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;">AI-powered patterns in your emotional journey</div></div></div>
+          <div class="feature-item"><div class="feature-icon">🌿</div><div><div style="font-weight:600;color:white;font-size:0.95rem;">Wellness Activities</div><div style="font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;">Personalised exercises, breathing, and reflections</div></div></div>
         </div>
       </div>
       <div>
         <div class="card float" style="padding:2rem; max-width:340px; margin:0 auto;">
-          <div style="font-size:0.75rem; color:var(--mid); font-weight:600; letter-spacing:0.1em; margin-bottom:1.25rem;">DAILY CHECK-IN</div>
-          <div style="background:rgba(82,183,136,0.08); border-radius:12px; padding:1rem; margin-bottom:0.75rem;">
-            <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6;">"I'm feeling overwhelmed with everything on my plate..."</p>
-          </div>
-          <div style="background:rgba(45,106,79,0.4); border-radius:12px; padding:1rem; border-left:3px solid var(--mid);">
-            <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; line-height:1.6;">I hear you. Feeling overwhelmed is tough. Let's break this down — what's weighing on you most right now?</p>
-          </div>
-          <div style="margin-top:1.25rem; font-size:0.75rem; color:rgba(82,183,136,0.5); text-align:center;">AES-256 Encrypted · GDPR & DPA 2019 Compliant</div>
+          <div style="font-size:0.75rem;color:var(--mid);font-weight:600;letter-spacing:0.1em;margin-bottom:1.25rem;">DAILY CHECK-IN</div>
+          <div style="background:rgba(82,183,136,0.08);border-radius:12px;padding:1rem;margin-bottom:0.75rem;"><p style="color:rgba(255,255,255,0.7);font-size:0.9rem;line-height:1.6;">"I'm feeling overwhelmed with everything on my plate..."</p></div>
+          <div style="background:rgba(45,106,79,0.4);border-radius:12px;padding:1rem;border-left:3px solid var(--mid);"><p style="color:rgba(255,255,255,0.85);font-size:0.9rem;line-height:1.6;">I hear you. Feeling overwhelmed is tough. Let's break this down — what's weighing on you most right now?</p></div>
+          <div style="margin-top:1.25rem;font-size:0.75rem;color:rgba(82,183,136,0.5);text-align:center;">AES-256 Encrypted · GDPR &amp; DPA 2019 Compliant</div>
         </div>
       </div>
     </div>
@@ -440,9 +310,7 @@
   <div class="slide-num">03 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 4 — PRODUCT (live)
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 4 — PRODUCT -->
 <section class="slide bg-cream" id="slide-4">
   <div class="slide-inner">
     <div class="slide-label" style="color:var(--green);">Product</div>
@@ -450,304 +318,199 @@
     <p class="body-dark" style="margin-top:1rem; max-width:580px;">Sanctum has been live at <strong>sanctumental.com</strong> for 6 months. Built entirely by the founder. The mobile app is in active development.</p>
     <div class="grid-3" style="margin-top:2.5rem;">
       <div class="card-light">
-        <div style="font-size:1.5rem; margin-bottom:0.75rem;">🌐</div>
-        <div style="font-weight:700; color:var(--forest); margin-bottom:0.5rem;">Web App</div>
-        <div style="font-size:0.85rem; color:var(--muted);">Fully functional. AI chat, journaling, insights and wellness tools — live now.</div>
-        <div style="margin-top:1rem; padding:0.4rem 0.8rem; background:var(--light); border-radius:6px; font-size:0.78rem; font-weight:600; color:var(--green); display:inline-block;">LIVE ✓</div>
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🌐</div>
+        <div style="font-weight:700;color:var(--forest);margin-bottom:0.5rem;">Web App</div>
+        <div style="font-size:0.85rem;color:var(--muted);">Fully functional. AI chat, journaling, insights and wellness tools — live now.</div>
+        <div style="margin-top:1rem;padding:0.4rem 0.8rem;background:var(--light);border-radius:6px;font-size:0.78rem;font-weight:600;color:var(--green);display:inline-block;">LIVE ✓</div>
       </div>
       <div class="card-light">
-        <div style="font-size:1.5rem; margin-bottom:0.75rem;">📱</div>
-        <div style="font-weight:700; color:var(--forest); margin-bottom:0.5rem;">Mobile App</div>
-        <div style="font-size:0.85rem; color:var(--muted);">iOS & Android under active development by founder. Beta launch targeted for Month 6.</div>
-        <div style="margin-top:1rem; padding:0.4rem 0.8rem; background:#FEF3C7; border-radius:6px; font-size:0.78rem; font-weight:600; color:#92400E; display:inline-block;">IN DEV 🔨</div>
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">📱</div>
+        <div style="font-weight:700;color:var(--forest);margin-bottom:0.5rem;">Mobile App</div>
+        <div style="font-size:0.85rem;color:var(--muted);">iOS &amp; Android under active development. Beta launch targeted for Month 6.</div>
+        <div style="margin-top:1rem;padding:0.4rem 0.8rem;background:#FEF3C7;border-radius:6px;font-size:0.78rem;font-weight:600;color:#92400E;display:inline-block;">IN DEV 🔨</div>
       </div>
       <div class="card-light">
-        <div style="font-size:1.5rem; margin-bottom:0.75rem;">🔐</div>
-        <div style="font-weight:700; color:var(--forest); margin-bottom:0.5rem;">Security</div>
-        <div style="font-size:0.85rem; color:var(--muted);">TLS 1.3, AES-256 encryption. GDPR & Kenya Data Protection Act 2019 compliant.</div>
-        <div style="margin-top:1rem; padding:0.4rem 0.8rem; background:var(--light); border-radius:6px; font-size:0.78rem; font-weight:600; color:var(--green); display:inline-block;">COMPLIANT ✓</div>
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🔐</div>
+        <div style="font-weight:700;color:var(--forest);margin-bottom:0.5rem;">Security</div>
+        <div style="font-size:0.85rem;color:var(--muted);">TLS 1.3, AES-256 encryption. GDPR &amp; Kenya Data Protection Act 2019 compliant.</div>
+        <div style="margin-top:1rem;padding:0.4rem 0.8rem;background:var(--light);border-radius:6px;font-size:0.78rem;font-weight:600;color:var(--green);display:inline-block;">COMPLIANT ✓</div>
       </div>
     </div>
-    <div style="margin-top:2rem; padding:1.25rem 1.75rem; background:white; border:1px solid var(--border); border-radius:12px; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-      <span style="font-size:0.85rem; color:var(--muted);">🔗 Live product:</span>
+    <div style="margin-top:2rem;padding:1.25rem 1.75rem;background:white;border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <span style="font-size:0.85rem;color:var(--muted);">🔗 Live product:</span>
       <strong style="color:var(--forest);">sanctumental.com</strong>
-      <span style="font-size:0.85rem; color:var(--muted);">— All IP 100% owned by founder. Code, database, and domain fully assigned to company.</span>
+      <span style="font-size:0.85rem;color:var(--muted);">— All IP 100% owned by founder. Code, database, and domain fully assigned to company.</span>
     </div>
   </div>
   <div class="slide-num">04 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 5 — MARKET SIZE
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 5 — MARKET SIZE -->
 <section class="slide bg-dark" id="slide-5">
   <div class="orb orb-2" style="opacity:0.2;"></div>
   <div class="slide-inner">
     <div class="slide-label">Market Opportunity</div>
     <h2 class="section-title text-light">A <span class="text-green">massive</span>, underserved,<br>high-urgency market.</h2>
     <div class="grid-3" style="margin-top:3rem;">
-      <div class="card" style="text-align:center; padding:2.5rem 1.5rem;">
-        <div style="font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mid);">$6.2B</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.5rem; font-weight:600; letter-spacing:0.05em;">GLOBAL MARKET TODAY</div>
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.4); margin-top:0.75rem;">Mental health app market 2024</div>
+      <div class="card" style="text-align:center;padding:2.5rem 1.5rem;">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--mid);">$6.2B</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.5rem;font-weight:600;letter-spacing:0.05em;">GLOBAL MARKET TODAY</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-top:0.75rem;">Mental health app market 2024</div>
       </div>
-      <div class="card" style="text-align:center; padding:2.5rem 1.5rem; border-color:rgba(82,183,136,0.4); background:rgba(82,183,136,0.1);">
-        <div style="font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mid);">$17.5B</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.5rem; font-weight:600; letter-spacing:0.05em;">PROJECTED 2030</div>
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.4); margin-top:0.75rem;">Growing at 16.5% CAGR</div>
+      <div class="card" style="text-align:center;padding:2.5rem 1.5rem;border-color:rgba(82,183,136,0.4);background:rgba(82,183,136,0.1);">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--mid);">$17.5B</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.5rem;font-weight:600;letter-spacing:0.05em;">PROJECTED 2030</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-top:0.75rem;">Growing at 16.5% CAGR</div>
       </div>
-      <div class="card" style="text-align:center; padding:2.5rem 1.5rem;">
-        <div style="font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--gold);">1.4B</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.5rem; font-weight:600; letter-spacing:0.05em;">AFRICA POPULATION</div>
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.4); margin-top:0.75rem;">~60% under 25 — digital natives</div>
+      <div class="card" style="text-align:center;padding:2.5rem 1.5rem;">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--gold);">1.4B</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.5rem;font-weight:600;letter-spacing:0.05em;">AFRICA POPULATION</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-top:0.75rem;">~60% under 25 — digital natives</div>
       </div>
     </div>
     <div class="h-line" style="margin-top:2.5rem;"></div>
-    <div class="grid-2" style="margin-top:1.5rem; gap:2rem;">
-      <div>
-        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.7;">Africa's mental health app market is essentially <span class="text-green">wide open</span>. No dominant Africa-first player exists. The continent is mobile-first, young, and increasingly connected.</p>
-      </div>
-      <div>
-        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.7;">Beyond consumer: corporate wellness, university partnerships, insurance integrations, and NGO contracts represent a significant B2B revenue layer once product is proven.</p>
-      </div>
+    <div class="grid-2" style="margin-top:1.5rem;gap:2rem;">
+      <div><p style="color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.7;">Africa's mental health app market is essentially <span class="text-green">wide open</span>. No dominant Africa-first player exists. The continent is mobile-first, young, and increasingly connected.</p></div>
+      <div><p style="color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.7;">Beyond consumer: corporate wellness, university partnerships, insurance integrations, and NGO contracts represent a significant B2B revenue layer once product is proven.</p></div>
     </div>
   </div>
   <div class="slide-num">05 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 6 — TRACTION
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 6 — TRACTION -->
 <section class="slide bg-warm" id="slide-6">
   <div class="slide-inner">
     <div class="slide-label" style="color:var(--green);">Traction</div>
     <h2 class="section-title text-forest">Built real. Shipped early.<br><span style="color:var(--green);">Growing organically.</span></h2>
-    <div class="grid-2" style="margin-top:2.5rem; align-items:start; gap:3rem;">
+    <div class="grid-2" style="margin-top:2.5rem;align-items:start;gap:3rem;">
       <div>
         <div class="grid-2" style="gap:1.25rem;">
-          <div class="card-light" style="text-align:center;">
-            <div style="font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--green);">118</div>
-            <div style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem; font-weight:600;">Users Registered</div>
-            <div style="font-size:0.75rem; color:var(--muted); margin-top:0.3rem;">Zero paid acquisition</div>
-          </div>
-          <div class="card-light" style="text-align:center;">
-            <div style="font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--green);">6</div>
-            <div style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem; font-weight:600;">Months Live</div>
-            <div style="font-size:0.75rem; color:var(--muted); margin-top:0.3rem;">Stable, continuous uptime</div>
-          </div>
-          <div class="card-light" style="text-align:center;">
-            <div style="font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--green);">7min+</div>
-            <div style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem; font-weight:600;">Avg Session</div>
-            <div style="font-size:0.75rem; color:var(--muted); margin-top:0.3rem;">Strong engagement signal</div>
-          </div>
-          <div class="card-light" style="text-align:center;">
-            <div style="font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--green);">$0</div>
-            <div style="font-size:0.8rem; color:var(--muted); margin-top:0.3rem; font-weight:600;">Marketing Budget</div>
-            <div style="font-size:0.75rem; color:var(--muted); margin-top:0.3rem;">100% organic growth</div>
-          </div>
+          <div class="card-light" style="text-align:center;"><div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--green);">118</div><div style="font-size:0.8rem;color:var(--muted);margin-top:0.3rem;font-weight:600;">Users Registered</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem;">Zero paid acquisition</div></div>
+          <div class="card-light" style="text-align:center;"><div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--green);">6</div><div style="font-size:0.8rem;color:var(--muted);margin-top:0.3rem;font-weight:600;">Months Live</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem;">Stable, continuous uptime</div></div>
+          <div class="card-light" style="text-align:center;"><div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--green);">7min+</div><div style="font-size:0.8rem;color:var(--muted);margin-top:0.3rem;font-weight:600;">Avg Session</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem;">Strong engagement signal</div></div>
+          <div class="card-light" style="text-align:center;"><div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--green);">$0</div><div style="font-size:0.8rem;color:var(--muted);margin-top:0.3rem;font-weight:600;">Marketing Budget</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.3rem;">100% organic growth</div></div>
         </div>
       </div>
       <div>
-        <div style="font-size:0.8rem; font-weight:700; color:var(--forest); letter-spacing:0.1em; margin-bottom:1.25rem;">WHAT'S BEEN BUILT</div>
-        <div class="funds-row">
-          <div style="font-size:0.9rem; color:#374151; flex:1;">Web App (full-featured)</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:100%; background:var(--green);"></div></div>
-          <div class="funds-pct" style="color:var(--green);">Done</div>
-        </div>
-        <div class="funds-row">
-          <div style="font-size:0.9rem; color:#374151; flex:1;">AI Companion (live)</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:100%; background:var(--green);"></div></div>
-          <div class="funds-pct" style="color:var(--green);">Done</div>
-        </div>
-        <div class="funds-row">
-          <div style="font-size:0.9rem; color:#374151; flex:1;">Private Journal (live)</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:100%; background:var(--green);"></div></div>
-          <div class="funds-pct" style="color:var(--green);">Done</div>
-        </div>
-        <div class="funds-row">
-          <div style="font-size:0.9rem; color:#374151; flex:1;">Subscription Model</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:100%; background:var(--green);"></div></div>
-          <div class="funds-pct" style="color:var(--green);">Done</div>
-        </div>
-        <div class="funds-row">
-          <div style="font-size:0.9rem; color:#374151; flex:1;">Mobile App (iOS + Android)</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:65%; background:#D97706;"></div></div>
-          <div class="funds-pct" style="color:#D97706;">65%</div>
-        </div>
-        <div class="funds-row">
-          <div style="font-size:0.9rem; color:#374151; flex:1;">B2B / API Layer</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:10%; background:#9CA3AF;"></div></div>
-          <div class="funds-pct" style="color:#9CA3AF;">Planned</div>
-        </div>
+        <div style="font-size:0.8rem;font-weight:700;color:var(--forest);letter-spacing:0.1em;margin-bottom:1.25rem;">WHAT'S BEEN BUILT</div>
+        <div class="funds-row"><div style="font-size:0.9rem;color:#374151;flex:1;">Web App (full-featured)</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:100%;background:var(--green);"></div></div><div class="funds-pct" style="color:var(--green);">Done</div></div>
+        <div class="funds-row"><div style="font-size:0.9rem;color:#374151;flex:1;">AI Companion (live)</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:100%;background:var(--green);"></div></div><div class="funds-pct" style="color:var(--green);">Done</div></div>
+        <div class="funds-row"><div style="font-size:0.9rem;color:#374151;flex:1;">Private Journal (live)</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:100%;background:var(--green);"></div></div><div class="funds-pct" style="color:var(--green);">Done</div></div>
+        <div class="funds-row"><div style="font-size:0.9rem;color:#374151;flex:1;">Subscription Model</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:100%;background:var(--green);"></div></div><div class="funds-pct" style="color:var(--green);">Done</div></div>
+        <div class="funds-row"><div style="font-size:0.9rem;color:#374151;flex:1;">Mobile App (iOS + Android)</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:65%;background:#D97706;"></div></div><div class="funds-pct" style="color:#D97706;">65%</div></div>
+        <div class="funds-row"><div style="font-size:0.9rem;color:#374151;flex:1;">B2B / API Layer</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:10%;background:#9CA3AF;"></div></div><div class="funds-pct" style="color:#9CA3AF;">Planned</div></div>
       </div>
     </div>
   </div>
   <div class="slide-num">06 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 7 — BUSINESS MODEL
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 7 — BUSINESS MODEL -->
 <section class="slide bg-forest" id="slide-7">
   <div class="slide-inner">
     <div class="slide-label">Business Model</div>
     <h2 class="section-title text-light">Simple. Scalable. <span class="text-green">Recurring.</span></h2>
     <div class="grid-3" style="margin-top:3rem;">
       <div class="card" style="border-color:rgba(82,183,136,0.15);">
-        <div style="font-size:1.5rem; margin-bottom:1rem;">🆓</div>
-        <div style="font-weight:700; color:white; font-size:1rem; margin-bottom:0.5rem;">Free Tier</div>
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.6;">Basic journaling + limited AI check-ins. Drives sign-ups and retention. The on-ramp.</div>
+        <div style="font-size:1.5rem;margin-bottom:1rem;">🆓</div>
+        <div style="font-weight:700;color:white;font-size:1rem;margin-bottom:0.5rem;">Free Tier</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.6;">Basic journaling + limited AI check-ins. Drives sign-ups and retention. The on-ramp.</div>
       </div>
-      <div class="card" style="border-color:rgba(82,183,136,0.5); background:rgba(82,183,136,0.12); position:relative;">
-        <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--mid); color:white; font-size:0.7rem; font-weight:700; padding:0.3rem 0.9rem; border-radius:100px; white-space:nowrap;">PRIMARY REVENUE</div>
-        <div style="font-size:1.5rem; margin-bottom:1rem;">💳</div>
-        <div style="font-weight:700; color:white; font-size:1rem; margin-bottom:0.5rem;">Subscription</div>
-        <div style="font-family:'DM Serif Display',serif; font-size:1.8rem; color:var(--mid); margin:0.5rem 0;">$4.99<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/mo</span></div>
-        <div style="font-size:0.78rem; color:var(--mid); margin-bottom:0.75rem;">or $39.99/year (save 33%)</div>
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.6;">Unlocks: Unlimited AI companion + Smart Insights + full wellness library.</div>
+      <div class="card" style="border-color:rgba(82,183,136,0.5);background:rgba(82,183,136,0.12);position:relative;">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--mid);color:white;font-size:0.7rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:100px;white-space:nowrap;">PRIMARY REVENUE</div>
+        <div style="font-size:1.5rem;margin-bottom:1rem;">💳</div>
+        <div style="font-weight:700;color:white;font-size:1rem;margin-bottom:0.5rem;">Subscription</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--mid);margin:0.5rem 0;">$1.99<span style="font-size:1rem;font-family:'DM Sans',sans-serif;">/mo</span></div>
+        <div style="font-size:0.78rem;color:var(--mid);margin-bottom:0.75rem;">or $25.99/year (save 33%)</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.6;">Unlocks: Unlimited AI companion + Smart Insights + full wellness library.</div>
       </div>
       <div class="card" style="border-color:rgba(201,168,76,0.3);">
-        <div style="font-size:1.5rem; margin-bottom:1rem;">🏢</div>
-        <div style="font-weight:700; color:white; font-size:1rem; margin-bottom:0.5rem;">B2B (Year 2+)</div>
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.6;">Corporate wellness packages. University licenses. NGO & insurance partnerships. Bulk pricing.</div>
-        <div style="margin-top:0.75rem; padding:0.3rem 0.75rem; background:rgba(201,168,76,0.1); border-radius:6px; font-size:0.78rem; color:var(--gold); display:inline-block;">High LTV · High Margin</div>
+        <div style="font-size:1.5rem;margin-bottom:1rem;">🏢</div>
+        <div style="font-weight:700;color:white;font-size:1rem;margin-bottom:0.5rem;">B2B (Year 2+)</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.6;">Corporate wellness packages. University licenses. NGO &amp; insurance partnerships. Bulk pricing.</div>
+        <div style="margin-top:0.75rem;padding:0.3rem 0.75rem;background:rgba(201,168,76,0.1);border-radius:6px;font-size:0.78rem;color:var(--gold);display:inline-block;">High LTV · High Margin</div>
       </div>
     </div>
     <div class="h-line" style="margin-top:2.5rem;"></div>
     <div class="grid-3" style="margin-top:1.5rem;">
-      <div style="text-align:center;">
-        <div style="font-family:'DM Serif Display',serif; font-size:1.8rem; color:var(--mid);">3–5%</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-top:0.3rem;">Target free→paid conversion</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-family:'DM Serif Display',serif; font-size:1.8rem; color:var(--mid);">$60</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-top:0.3rem;">Annual LTV per subscriber</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-family:'DM Serif Display',serif; font-size:1.8rem; color:var(--mid);">~70%</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-top:0.3rem;">Gross margin target (digital SaaS)</div>
-      </div>
+      <div style="text-align:center;"><div style="font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--mid);">3–5%</div><div style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Target free→paid conversion</div></div>
+      <div style="text-align:center;"><div style="font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--mid);">$24</div><div style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Annual LTV per subscriber</div></div>
+      <div style="text-align:center;"><div style="font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--mid);">~70%</div><div style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Gross margin target (digital SaaS)</div></div>
     </div>
   </div>
   <div class="slide-num">07 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 8 — GO-TO-MARKET
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 8 — GO-TO-MARKET -->
 <section class="slide bg-dark" id="slide-8">
-  <div class="orb orb-1" style="opacity:0.12; top:-200px; right:-200px;"></div>
+  <div class="orb orb-1" style="opacity:0.12;top:-200px;right:-200px;"></div>
   <div class="slide-inner">
     <div class="slide-label">Go-To-Market</div>
     <h2 class="section-title text-light">Africa-first. <span class="text-green">Community-led.</span></h2>
-    <div class="grid-2" style="margin-top:2.5rem; gap:3rem; align-items:start;">
+    <div class="grid-2" style="margin-top:2.5rem;gap:3rem;align-items:start;">
       <div>
-        <div style="font-size:0.78rem; font-weight:700; color:var(--mid); letter-spacing:0.12em; margin-bottom:1.25rem;">PHASE 1 · MONTHS 1–6 · KENYA</div>
-        <div class="feature-item">
-          <div class="feature-icon">🎓</div>
-          <div>
-            <div style="font-weight:600; color:white; font-size:0.9rem;">University Partnerships</div>
-            <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:0.2rem;">UoN, Strathmore, KU — target student mental health offices. License deal + direct student acquisition.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📲</div>
-          <div>
-            <div style="font-weight:600; color:white; font-size:0.9rem;">Social Content Engine</div>
-            <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:0.2rem;">Mental health content on TikTok, Instagram & X. Emotional resonance = organic sign-ups. Zero ad spend required.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🤝</div>
-          <div>
-            <div style="font-weight:600; color:white; font-size:0.9rem;">Community & NGO Channels</div>
-            <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:0.2rem;">Partner with churches, youth groups, and mental health NGOs. Trust-based distribution in East Africa.</div>
-          </div>
-        </div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--mid);letter-spacing:0.12em;margin-bottom:1.25rem;">PHASE 1 · MONTHS 1–6 · KENYA</div>
+        <div class="feature-item"><div class="feature-icon">🎓</div><div><div style="font-weight:600;color:white;font-size:0.9rem;">University Partnerships</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;">UoN, Strathmore, KU — target student mental health offices. License deal + direct student acquisition.</div></div></div>
+        <div class="feature-item"><div class="feature-icon">📲</div><div><div style="font-weight:600;color:white;font-size:0.9rem;">Social Content Engine</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;">Mental health content on TikTok, Instagram &amp; X. Emotional resonance = organic sign-ups. Zero ad spend required.</div></div></div>
+        <div class="feature-item"><div class="feature-icon">🤝</div><div><div style="font-weight:600;color:white;font-size:0.9rem;">Community &amp; NGO Channels</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;">Partner with churches, youth groups, and mental health NGOs. Trust-based distribution in East Africa.</div></div></div>
       </div>
       <div>
-        <div style="font-size:0.78rem; font-weight:700; color:var(--gold); letter-spacing:0.12em; margin-bottom:1.25rem;">PHASE 2 · MONTHS 7–18 · PAN-AFRICA & DIASPORA</div>
-        <div class="feature-item">
-          <div class="feature-icon">🌍</div>
-          <div>
-            <div style="font-weight:600; color:white; font-size:0.9rem;">Pan-African Expansion</div>
-            <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:0.2rem;">Nigeria, Ghana, South Africa — replicate Kenya playbook with local language + cultural customisation.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🏢</div>
-          <div>
-            <div style="font-weight:600; color:white; font-size:0.9rem;">B2B / Corporate Wellness</div>
-            <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:0.2rem;">Target HR leaders at Safaricom, KCB, Equity Bank, and other large Kenyan employers. EAP replacement.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🌐</div>
-          <div>
-            <div style="font-weight:600; color:white; font-size:0.9rem;">African Diaspora (US/UK)</div>
-            <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:0.2rem;">Diaspora communities deeply underserved by Western mental health apps. Cultural fit is a unique moat.</div>
-          </div>
-        </div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--gold);letter-spacing:0.12em;margin-bottom:1.25rem;">PHASE 2 · MONTHS 7–18 · PAN-AFRICA &amp; DIASPORA</div>
+        <div class="feature-item"><div class="feature-icon">🌍</div><div><div style="font-weight:600;color:white;font-size:0.9rem;">Pan-African Expansion</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;">Nigeria, Ghana, South Africa — replicate Kenya playbook with local language + cultural customisation.</div></div></div>
+        <div class="feature-item"><div class="feature-icon">🏢</div><div><div style="font-weight:600;color:white;font-size:0.9rem;">B2B / Corporate Wellness</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;">Target HR leaders at Safaricom, KCB, Equity Bank, and other large Kenyan employers. EAP replacement.</div></div></div>
+        <div class="feature-item"><div class="feature-icon">🌐</div><div><div style="font-weight:600;color:white;font-size:0.9rem;">African Diaspora (US/UK)</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.2rem;">Diaspora communities deeply underserved by Western mental health apps. Cultural fit is a unique moat.</div></div></div>
       </div>
     </div>
   </div>
   <div class="slide-num">08 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 9 — TEAM
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 9 — TEAM -->
 <section class="slide bg-cream" id="slide-9">
   <div class="slide-inner">
     <div class="slide-label" style="color:var(--green);">Team</div>
-    <h2 class="section-title text-forest">Built by a founder who <span style="color:var(--green);">ships.</span></h2>
-    <div style="margin-top:2.5rem;" class="grid-2" style="gap:3rem; align-items:start;">
-      <div class="founder-card" style="background:white; border:1px solid var(--border); border-radius:20px; padding:2rem; text-align:center;">
-        <div class="founder-avatar" style="background:linear-gradient(135deg,#1B4332,#52B788);">A</div>
-        <div style="font-weight:700; color:var(--forest); font-size:1.1rem;">Alpha Lee Njagi Munene</div>
-        <div style="color:var(--green); font-size:0.85rem; font-weight:600; margin-top:0.25rem;">Founder & CTO</div>
-        <div class="h-line-dark"></div>
-        <div style="font-size:0.87rem; color:var(--muted); line-height:1.75; text-align:left;">
-          Built Sanctum from zero — alone. Web app, AI integration, database architecture, security infrastructure, subscription system, and mobile app (in progress). Every line of code. Every design decision.
-        </div>
-        <div style="margin-top:1.25rem; display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center;">
-          <span style="background:var(--light); color:var(--green); font-size:0.72rem; font-weight:700; padding:0.25rem 0.6rem; border-radius:6px;">Full-Stack Dev</span>
-          <span style="background:var(--light); color:var(--green); font-size:0.72rem; font-weight:700; padding:0.25rem 0.6rem; border-radius:6px;">AI/ML Integration</span>
-          <span style="background:var(--light); color:var(--green); font-size:0.72rem; font-weight:700; padding:0.25rem 0.6rem; border-radius:6px;">Product Design</span>
-          <span style="background:var(--light); color:var(--green); font-size:0.72rem; font-weight:700; padding:0.25rem 0.6rem; border-radius:6px;">Mobile Dev</span>
+    <h2 class="section-title text-forest">A lean team built to <span style="color:var(--green);">execute.</span></h2>
+    <div style="margin-top:2.5rem;" class="grid-2" style="gap:3rem;align-items:start;">
+      <div>
+        <!-- Founder -->
+        <div class="founder-card" style="background:white;border:1px solid var(--border);border-radius:20px;padding:2rem;text-align:center;">
+          <div class="founder-avatar" style="background:linear-gradient(135deg,#1B4332,#52B788);">A</div>
+          <div style="font-weight:700;color:var(--forest);font-size:1.1rem;">Alpha Lee Njagi Munene</div>
+          <div style="color:var(--green);font-size:0.85rem;font-weight:600;margin-top:0.25rem;">Founder &amp; CTO</div>
+          <div class="h-line-dark"></div>
+          <div style="font-size:0.87rem;color:var(--muted);line-height:1.75;text-align:left;">Built Sanctum from zero — alone. Web app, AI integration, database architecture, security infrastructure, subscription system, and mobile app (in progress). Every line of code. Every design decision.</div>
+          <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:0.4rem;justify-content:center;">
+            <span style="background:var(--light);color:var(--green);font-size:0.72rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:6px;">Full-Stack Dev</span>
+            <span style="background:var(--light);color:var(--green);font-size:0.72rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:6px;">AI/ML Integration</span>
+            <span style="background:var(--light);color:var(--green);font-size:0.72rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:6px;">Product Design</span>
+            <span style="background:var(--light);color:var(--green);font-size:0.72rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:6px;">Mobile Dev</span>
+          </div>
         </div>
       </div>
       <div>
-        <div style="font-size:0.8rem; font-weight:700; color:var(--forest); letter-spacing:0.1em; margin-bottom:1.25rem;">HIRING WITH FIRST RAISE</div>
+        <div style="font-size:0.8rem;font-weight:700;color:var(--forest);letter-spacing:0.1em;margin-bottom:1.25rem;">HIRING WITH FIRST RAISE</div>
         <div class="feature-item" style="border-color:var(--border);">
-          <div class="feature-icon" style="background:var(--light);">📈</div>
+          <div class="hire-avatar">SE</div>
           <div>
-            <div style="font-weight:600; color:var(--forest);">Growth / Biz Dev Lead</div>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:0.2rem;">User acquisition, partnerships, investor relations — Month 3</div>
+            <div style="font-weight:600;color:var(--forest);">Software Engineer</div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-top:0.2rem;">Full-stack &amp; mobile development, iOS + Android build-out — Month 3</div>
           </div>
         </div>
         <div class="feature-item" style="border-color:var(--border);">
-          <div class="feature-icon" style="background:var(--light);">🎨</div>
+          <div class="hire-avatar">BD</div>
           <div>
-            <div style="font-weight:600; color:var(--forest);">UI/UX Designer</div>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:0.2rem;">Mobile app design, web refinement — Month 2 (contract)</div>
+            <div style="font-weight:600;color:var(--forest);">Business Development</div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-top:0.2rem;">Partnerships, B2B pipeline, university &amp; corporate sales — Month 3</div>
           </div>
         </div>
         <div class="feature-item" style="border-color:var(--border);">
-          <div class="feature-icon" style="background:var(--light);">💬</div>
+          <div class="hire-avatar">PM</div>
           <div>
-            <div style="font-weight:600; color:var(--forest);">Content & Community Manager</div>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:0.2rem;">Social + community growth engine — Month 4</div>
+            <div style="font-weight:600;color:var(--forest);">Product Manager</div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-top:0.2rem;">Roadmap, user research, feature prioritisation &amp; growth metrics — Month 4</div>
           </div>
         </div>
-        <div class="feature-item" style="border-color:var(--border);">
-          <div class="feature-icon" style="background:var(--light);">🧠</div>
-          <div>
-            <div style="font-weight:600; color:var(--forest);">Mental Health Advisor</div>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:0.2rem;">Clinical safety, credibility, enterprise sales — Advisory + 0.25% equity</div>
-          </div>
-        </div>
-        <div style="margin-top:1.5rem; padding:1rem 1.25rem; background:var(--light); border-radius:10px; font-size:0.87rem; color:var(--green); line-height:1.6;">
+        <div style="margin-top:1.5rem;padding:1rem 1.25rem;background:var(--light);border-radius:10px;font-size:0.87rem;color:var(--green);line-height:1.6;">
           💡 <strong>Founder insight:</strong> Solo-built products that reach 118 users without any marketing spend demonstrate exceptional product-market signal and founder execution ability.
         </div>
       </div>
@@ -756,163 +519,82 @@
   <div class="slide-num">09 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 10 — FINANCIALS
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 10 — FINANCIALS -->
 <section class="slide bg-mid" id="slide-10">
   <div class="slide-inner">
     <div class="slide-label">Financials</div>
     <h2 class="section-title text-light">Lean burn. <span class="text-green">Long runway.</span> Clear path.</h2>
-    <div class="grid-2" style="margin-top:2.5rem; gap:3rem; align-items:start;">
+    <div class="grid-2" style="margin-top:2.5rem;gap:3rem;align-items:start;">
       <div>
-        <div style="font-size:0.78rem; font-weight:700; color:var(--mid); letter-spacing:0.12em; margin-bottom:1.25rem;">USE OF $120,000 RAISE</div>
-        <div class="funds-row">
-          <div class="funds-dot" style="background:#52B788;"></div>
-          <div style="font-size:0.88rem; color:white; flex:1;">Team Salaries (12mo)</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:52%; background:#52B788;"></div></div>
-          <div class="funds-pct">52%</div>
-        </div>
-        <div class="funds-row">
-          <div class="funds-dot" style="background:#C9A84C;"></div>
-          <div style="font-size:0.88rem; color:white; flex:1;">Next Round Reserve</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:21%; background:#C9A84C;"></div></div>
-          <div class="funds-pct" style="color:#C9A84C;">21%</div>
-        </div>
-        <div class="funds-row">
-          <div class="funds-dot" style="background:#74C69D;"></div>
-          <div style="font-size:0.88rem; color:white; flex:1;">AI API Costs</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:5%; background:#74C69D;"></div></div>
-          <div class="funds-pct" style="color:#74C69D;">5%</div>
-        </div>
-        <div class="funds-row">
-          <div class="funds-dot" style="background:#40916C;"></div>
-          <div style="font-size:0.88rem; color:white; flex:1;">Marketing & Growth</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:5%; background:#40916C;"></div></div>
-          <div class="funds-pct" style="color:#40916C;">5%</div>
-        </div>
-        <div class="funds-row">
-          <div class="funds-dot" style="background:#95D5B2;"></div>
-          <div style="font-size:0.88rem; color:white; flex:1;">Legal + Incorporation</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:2%; background:#95D5B2;"></div></div>
-          <div class="funds-pct" style="color:#95D5B2;">2%</div>
-        </div>
-        <div class="funds-row" style="border:none;">
-          <div class="funds-dot" style="background:#6B7280;"></div>
-          <div style="font-size:0.88rem; color:white; flex:1;">Ops, Tools, Contingency</div>
-          <div class="funds-bar-wrap"><div class="funds-bar" style="width:15%; background:#6B7280;"></div></div>
-          <div class="funds-pct" style="color:#9CA3AF;">15%</div>
-        </div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--mid);letter-spacing:0.12em;margin-bottom:1.25rem;">USE OF $45,000 RAISE</div>
+        <div class="funds-row"><div class="funds-dot" style="background:#52B788;"></div><div style="font-size:0.88rem;color:white;flex:1;">Team Salaries (10–12mo)</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:45%;background:#52B788;"></div></div><div class="funds-pct">45%</div></div>
+        <div class="funds-row"><div class="funds-dot" style="background:#C9A84C;"></div><div style="font-size:0.88rem;color:white;flex:1;">Next Round Reserve</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:21%;background:#C9A84C;"></div></div><div class="funds-pct" style="color:#C9A84C;">21%</div></div>
+        <div class="funds-row"><div class="funds-dot" style="background:#74C69D;"></div><div style="font-size:0.88rem;color:white;flex:1;">AI API Costs</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:5%;background:#74C69D;"></div></div><div class="funds-pct" style="color:#74C69D;">5%</div></div>
+        <div class="funds-row"><div class="funds-dot" style="background:#40916C;"></div><div style="font-size:0.88rem;color:white;flex:1;">Marketing &amp; Growth</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:10%;background:#40916C;"></div></div><div class="funds-pct" style="color:#40916C;">10%</div></div>
+        <div class="funds-row" style="border:none;"><div class="funds-dot" style="background:#6B7280;"></div><div style="font-size:0.88rem;color:white;flex:1;">Legal, Ops &amp; Contingency</div><div class="funds-bar-wrap"><div class="funds-bar" style="width:19%;background:#6B7280;"></div></div><div class="funds-pct" style="color:#9CA3AF;">19%</div></div>
       </div>
       <div>
-        <div style="font-size:0.78rem; font-weight:700; color:var(--mid); letter-spacing:0.12em; margin-bottom:1.25rem;">12-MONTH PROJECTIONS</div>
-        <div class="card" style="background:rgba(0,0,0,0.2); margin-bottom:1rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:0.85rem; color:rgba(255,255,255,0.6);">Monthly Burn Rate</div>
-            <div style="font-family:'DM Serif Display',serif; color:var(--mid); font-size:1.4rem;">~$3,465</div>
-          </div>
-        </div>
-        <div class="card" style="background:rgba(0,0,0,0.2); margin-bottom:1rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:0.85rem; color:rgba(255,255,255,0.6);">Runway</div>
-            <div style="font-family:'DM Serif Display',serif; color:var(--mid); font-size:1.4rem;">12–14 months</div>
-          </div>
-        </div>
-        <div class="card" style="background:rgba(0,0,0,0.2); margin-bottom:1rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:0.85rem; color:rgba(255,255,255,0.6);">User Target (Month 12)</div>
-            <div style="font-family:'DM Serif Display',serif; color:var(--mid); font-size:1.4rem;">2,000 MAU</div>
-          </div>
-        </div>
-        <div class="card" style="background:rgba(0,0,0,0.2);">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:0.85rem; color:rgba(255,255,255,0.6);">MRR Target (Month 12)</div>
-            <div style="font-family:'DM Serif Display',serif; color:var(--mid); font-size:1.4rem;">$5,000+</div>
-          </div>
-        </div>
-        <div style="margin-top:1.25rem; font-size:0.82rem; color:rgba(255,255,255,0.4); line-height:1.6;">At $5K MRR (~100 paying subscribers at 5% conversion), Sanctum is positioned for a Seed Round at significantly higher valuation.</div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--mid);letter-spacing:0.12em;margin-bottom:1.25rem;">12-MONTH PROJECTIONS</div>
+        <div class="card" style="background:rgba(0,0,0,0.2);margin-bottom:1rem;"><div style="display:flex;justify-content:space-between;align-items:center;"><div style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Monthly Burn Rate</div><div style="font-family:'DM Serif Display',serif;color:var(--mid);font-size:1.4rem;">~$1,800</div></div></div>
+        <div class="card" style="background:rgba(0,0,0,0.2);margin-bottom:1rem;"><div style="display:flex;justify-content:space-between;align-items:center;"><div style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Runway</div><div style="font-family:'DM Serif Display',serif;color:var(--mid);font-size:1.4rem;">10–12 months</div></div></div>
+        <div class="card" style="background:rgba(0,0,0,0.2);margin-bottom:1rem;"><div style="display:flex;justify-content:space-between;align-items:center;"><div style="font-size:0.85rem;color:rgba(255,255,255,0.6);">User Target (Month 12)</div><div style="font-family:'DM Serif Display',serif;color:var(--mid);font-size:1.4rem;">2,000 MAU</div></div></div>
+        <div class="card" style="background:rgba(0,0,0,0.2);"><div style="display:flex;justify-content:space-between;align-items:center;"><div style="font-size:0.85rem;color:rgba(255,255,255,0.6);">MRR Target (Month 12)</div><div style="font-family:'DM Serif Display',serif;color:var(--mid);font-size:1.4rem;">$5,000+</div></div></div>
+        <div style="margin-top:1.25rem;font-size:0.82rem;color:rgba(255,255,255,0.4);line-height:1.6;">At $5K MRR, Sanctum is positioned for a Seed Round at a significantly higher valuation.</div>
       </div>
     </div>
   </div>
   <div class="slide-num">10 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 11 — THE ASK (SAFE)
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 11 — THE ASK -->
 <section class="slide bg-dark" id="slide-11">
   <div class="orb orb-1" style="opacity:0.2;"></div>
   <div class="orb orb-2" style="opacity:0.15;"></div>
   <div class="slide-inner" style="text-align:center;">
     <div class="slide-label" style="justify-content:center;">The Ask</div>
-    <div class="ask-number">$120,000</div>
-    <div style="font-family:'DM Serif Display',serif; font-size:1.5rem; color:rgba(255,255,255,0.5); margin-top:0.5rem;">Pre-Seed SAFE Note</div>
-    <div style="margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
-      <span class="ask-pill">Valuation Cap: $1,200,000</span>
+    <div class="ask-number">$45,000</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:1.5rem;color:rgba(255,255,255,0.5);margin-top:0.5rem;">Pre-Seed SAFE Note</div>
+    <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+      <span class="ask-pill">Valuation Cap: $450,000</span>
       <span class="ask-pill">Discount: 20%</span>
       <span class="ask-pill">Instrument: SAFE (YC Post-Money)</span>
       <span class="ask-pill">Pro-Rata Rights: Yes</span>
       <span class="ask-pill">MFN: Yes</span>
       <span class="ask-pill">Board Seat: No</span>
     </div>
-    <div class="h-line" style="margin:2.5rem auto; max-width:400px;"></div>
-    <div class="grid-3" style="max-width:700px; margin:0 auto;">
-      <div>
-        <div style="font-family:'DM Serif Display',serif; font-size:2rem; color:var(--mid);">10%</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-top:0.3rem;">Implied equity at conversion</div>
-      </div>
-      <div>
-        <div style="font-family:'DM Serif Display',serif; font-size:2rem; color:var(--mid);">90%</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-top:0.3rem;">Founder equity retained</div>
-      </div>
-      <div>
-        <div style="font-family:'DM Serif Display',serif; font-size:2rem; color:var(--mid);">12mo</div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-top:0.3rem;">Runway secured</div>
-      </div>
+    <div class="h-line" style="margin:2.5rem auto;max-width:400px;"></div>
+    <div class="grid-3" style="max-width:700px;margin:0 auto;">
+      <div><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--mid);">~10%</div><div style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Implied equity at conversion</div></div>
+      <div><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--mid);">90%</div><div style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Founder equity retained</div></div>
+      <div><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--mid);">10–12mo</div><div style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;">Runway secured</div></div>
     </div>
-    <div style="margin-top:2.5rem; font-size:0.9rem; color:rgba(255,255,255,0.4);">Use of funds: team (52%) · next-round reserve (21%) · product & AI (10%) · marketing (5%) · legal & ops (12%)</div>
+    <div style="margin-top:2.5rem;font-size:0.9rem;color:rgba(255,255,255,0.4);">Use of funds: team (45%) · next-round reserve (21%) · AI API (5%) · marketing (10%) · legal &amp; ops (19%)</div>
   </div>
   <div class="slide-num">11 / 12</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 12 — VISION / CLOSE
-═══════════════════════════════════════════════════════ -->
+<!-- SLIDE 12 — VISION / CLOSE -->
 <section class="slide bg-forest" id="slide-12">
   <div class="slide-inner" style="text-align:center;">
     <div class="slide-label" style="justify-content:center;">Vision</div>
-    <blockquote class="mission" style="margin:0 auto; text-align:left;">
-      "Africa's leading mental wellness platform — building the emotional infrastructure a continent of 1.4 billion people deserves."
-    </blockquote>
-    <div style="margin-top:3rem;" class="grid-3" style="max-width:700px; margin:3rem auto 0;">
-      <div class="card" style="text-align:center;">
-        <div style="font-size:1.3rem; margin-bottom:0.5rem;">🌍</div>
-        <div style="font-weight:600; color:white; font-size:0.9rem;">Year 1</div>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); margin-top:0.4rem;">Kenya market leader. 2,000 MAU. Mobile app launched. First revenue.</div>
-      </div>
-      <div class="card" style="text-align:center; border-color:rgba(82,183,136,0.4);">
-        <div style="font-size:1.3rem; margin-bottom:0.5rem;">🚀</div>
-        <div style="font-weight:600; color:white; font-size:0.9rem;">Year 2</div>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); margin-top:0.4rem;">Pan-African. 50,000 users. B2B contracts. Seed Round closed.</div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:1.3rem; margin-bottom:0.5rem;">💫</div>
-        <div style="font-weight:600; color:white; font-size:0.9rem;">Year 3</div>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); margin-top:0.4rem;">Global diaspora. Clinical integrations. Series A. Dominant brand.</div>
-      </div>
+    <blockquote class="mission" style="margin:0 auto;text-align:left;">"Africa's leading mental wellness platform — building the emotional infrastructure a continent of 1.4 billion people deserves."</blockquote>
+    <div style="margin-top:3rem;" class="grid-3" style="max-width:700px;margin:3rem auto 0;">
+      <div class="card" style="text-align:center;"><div style="font-size:1.3rem;margin-bottom:0.5rem;">🌍</div><div style="font-weight:600;color:white;font-size:0.9rem;">Year 1</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:0.4rem;">Kenya market leader. 2,000 MAU. Mobile app launched. First revenue.</div></div>
+      <div class="card" style="text-align:center;border-color:rgba(82,183,136,0.4);"><div style="font-size:1.3rem;margin-bottom:0.5rem;">🚀</div><div style="font-weight:600;color:white;font-size:0.9rem;">Year 2</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:0.4rem;">Pan-African. 50,000 users. B2B contracts. Seed Round closed.</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size:1.3rem;margin-bottom:0.5rem;">💫</div><div style="font-weight:600;color:white;font-size:0.9rem;">Year 3</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:0.4rem;">Global diaspora. Clinical integrations. Series A. Dominant brand.</div></div>
     </div>
     <div class="h-line" style="margin-top:3rem;"></div>
     <div style="margin-top:2rem;">
-      <div style="font-family:'DM Serif Display',serif; font-size:2rem; color:white;">Sanctum</div>
-      <div style="color:var(--mid); margin-top:0.5rem; font-size:0.95rem;">Alpha Lee Njagi Munene · sanctumental.com</div>
-      <div style="color:rgba(255,255,255,0.35); margin-top:0.5rem; font-size:0.82rem;">Confidential — For qualified investors only · May 2026</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:2rem;color:white;">Sanctum</div>
+      <div style="color:var(--mid);margin-top:0.5rem;font-size:0.95rem;">Alpha Lee Njagi Munene · sanctumental.com</div>
+      <div style="color:rgba(255,255,255,0.35);margin-top:0.5rem;font-size:0.82rem;">Confidential — For qualified investors only · May 2026</div>
     </div>
   </div>
   <div class="slide-num">12 / 12</div>
 </section>
 
-</div><!-- /deck -->
+</div>
 
-<!-- ARROWS -->
 <div class="nav-arrows">
   <button class="arrow-btn" id="prevBtn" onclick="navigate(-1)">↑</button>
   <button class="arrow-btn" id="nextBtn" onclick="navigate(1)">↓</button>
@@ -923,7 +605,6 @@
   const total  = slides.length;
   let current  = 0;
 
-  // Build nav dots
   const dotsEl = document.getElementById('navDots');
   for (let i = 0; i < total; i++) {
     const d = document.createElement('button');
@@ -941,14 +622,11 @@
   function navigate(dir) { goTo(current + dir); }
 
   function updateUI() {
-    document.querySelectorAll('.nav-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
+    document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === current));
     document.getElementById('slideCounter').textContent = `${current + 1} / ${total}`;
     document.getElementById('progressBar').style.width = `${((current + 1) / total) * 100}%`;
   }
 
-  // Intersection observer for animations + current tracking
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const inner = entry.target.querySelector('.slide-inner');
@@ -962,13 +640,11 @@
 
   slides.forEach(s => observer.observe(s));
 
-  // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') navigate(1);
     if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  navigate(-1);
   });
 
-  // Init
   updateUI();
 </script>
 </body>
